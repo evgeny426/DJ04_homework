@@ -1,0 +1,20 @@
+{% extends 'films/layoute.html' %}
+
+{% block title %}
+    <title> Фильмы </title>
+{% endblock %}
+
+{% block content%}
+    <h4>Фильмы</h4>
+    {% if films %}
+        {% for film in films %}
+            <div>
+                <h3> {{ film.title }} </h3>
+                <p> {{ film.description }} </p>
+                <p> {{ film.review }} </p>
+            </div>
+        {% endfor %}
+    {% else %}
+		<h4>Фильмов ещё нет.</h4>
+	{% endif %}
+{% endblock %}
